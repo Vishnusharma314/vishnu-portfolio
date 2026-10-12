@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090910">
+<meta name="description" content="Vishnu Sharma — Lead Software Developer, Backend Engineer and Product Builder.">
+<title>Vishnu Sharma | Software Engineer & Product Builder</title>
+<style>
+:root {
+  --bg:#090910;
+  --card:#12121e;
+  --text:#f6f4ff;
+  --muted:#aaa8c0;
+  --purple:#b3a2ff;
+  --pink:#f0a5e8;
+  --border:rgba(255,255,255,.11);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  background:radial-gradient(ellipse at 85% 0%,#35245b55,transparent 38%),var(--bg);
+  color:var(--text);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+  line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,calc(100% - 40px));margin:auto}
+nav{
+  position:sticky;top:0;z-index:10;
+  background:#090910dc;backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:19px;font-weight:850;letter-spacing:-1px}
+.logo span{color:var(--purple)}
+.nav-links{display:flex;gap:24px;align-items:center;font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:white}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 19px;border-radius:30px;font-size:13px;font-weight:750;
+  transition:.2s;cursor:pointer;border:1px solid var(--border);
+}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:linear-gradient(120deg,var(--purple),var(--pink));color:#171023;border:0}
+.btn-outline{background:#ffffff06}
+.hero{
+  min-height:650px;padding:100px 0 80px;
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:55px;align-items:center;
+}
+.eyebrow{color:var(--purple);font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+h1{font-size:clamp(45px,6.5vw,76px);line-height:1.08;letter-spacing:-4px;margin:20px 0}
+.gradient{
+  background:linear-gradient(110deg,#c4b5ff,#f0a7e8,#a4f1d2);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);max-width:590px;font-size:16px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0}
+.quick-skills{display:flex;gap:10px;flex-wrap:wrap;font-size:12px;color:#d3cfe8}
+.quick-skills span{padding:7px 11px;border:1px solid var(--border);border-radius:20px}
+.code-card{
+  position:relative;background:linear-gradient(145deg,#1d1a31,#10101a);
+  border:1px solid #ffffff1c;border-radius:22px;padding:25px;
+  box-shadow:0 30px 90px #0007;transform:rotate(1.5deg);
+}
+.code-top{display:flex;gap:7px;border-bottom:1px solid var(--border);padding-bottom:18px;margin-bottom:20px}
+.dot{width:9px;height:9px;border-radius:50%;background:#f09bab}
+.dot:nth-child(2){background:#eed18d}.dot:nth-child(3){background:#91dfbd}
+.filename{margin-left:auto;font-size:11px;color:var(--muted)}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/2 ui-monospace,monospace;color:#d6d0ef}
+.code-purple{color:#b9a8ff}.code-green{color:#a5e9c9}.code-pink{color:#efa6e2}
+.float-card{
+  position:absolute;background:#191728;border:1px solid var(--border);
+  border-radius:13px;padding:12px 16px;font-size:12px;
+  box-shadow:0 10px 35px #0006;
+}
+.float-one{top:-25px;right:-15px}.float-two{bottom:-22px;left:-20px}
+.float-card small{display:block;color:var(--muted);font-size:10px}
+section{padding:85px 0}
+.section-heading{margin-bottom:32px}
+.section-heading small{color:var(--purple);font-weight:800;letter-spacing:2px;font-size:11px}
+h2{font-size:clamp(31px,4vw,44px);letter-spacing:-1.8px;line-height:1.2;margin:10px 0}
+.section-heading p{max-width:650px;color:var(--muted);font-size:14px;margin-top:12px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.panel,.project,.skill{
+  background:linear-gradient(145deg,#ffffff0b,#ffffff03);
+  border:1px solid var(--border);border-radius:20px;
+}
+.panel{padding:27px}
+.panel h3{font-size:18px;margin-bottom:12px}
+.panel p{font-size:14px;color:var(--muted);margin-bottom:12px}
+.principles{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.principle{padding:14px;border:1px solid var(--border);border-radius:12px;font-size:12px;color:var(--muted)}
+.principle b{display:block;color:white;font-size:14px;margin-bottom:4px}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.skill{padding:20px;transition:.2s}
+.skill:hover,.project:hover{transform:translateY(-4px);border-color:#b3a2ff77}
+.skill-icon{font-size:23px;color:var(--purple);margin-bottom:12px}
+.skill h3{font-size:14px;margin-bottom:6px}
+.skill p{font-size:12px;color:var(--muted)}
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:17px}
+.project{padding:25px;min-height:290px;display:flex;flex-direction:column;transition:.2s}
+.project-label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;color:var(--purple);font-weight:800}
+.project h3{font-size:24px;letter-spacing:-.7px;margin:15px 0 8px}
+.project p{font-size:13px;color:var(--muted);margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:12px}
+.tags span{font-size:10px;border:1px solid var(--border);padding:4px 9px;border-radius:20px;color:#d2cde6}
+.project-link{display:inline-block;margin-top:18px;font-size:12px;color:#d3c5ff;font-weight:800;width:max-content}
+.project-link:hover{color:white}
+.project.wide{grid-column:1/-1;min-height:220px}
+.approach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{padding:23px;border:1px solid var(--border);border-radius:17px;background:#ffffff05}
+.step small{color:var(--purple);font-family:monospace}
+.step h3{font-size:16px;margin:12px 0 8px}
+.step p{font-size:12px;color:var(--muted)}
+.contact-panel{
+  padding:clamp(28px,5vw,55px);border-radius:26px;
+  border:1px solid #b3a2ff44;
+  background:radial-gradient(ellipse at 90% 0%,#8d68c533,transparent 45%),#141320;
+}
+.contact-panel h2{font-size:clamp(35px,5vw,55px);max-width:680px}
+.contact-panel p{color:var(--muted);max-width:580px;font-size:14px;margin:15px 0}
+.contact-details{display:flex;gap:23px;flex-wrap:wrap;margin-top:26px;font-size:13px}
+.contact-details a:hover{color:var(--purple)}
+footer{padding:25px 0;color:#85829b;font-size:11px;border-top:1px solid var(--border)}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{animation:rise .7s both}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){
+ .hero{grid-template-columns:1fr;gap:65px;padding-top:70px}
+ .hero-art{max-width:480px;width:100%;margin:auto}
+ .skills-grid{grid-template-columns:repeat(2,1fr)}
+ .nav-links{gap:12px}.nav-links a:not(.nav-cta){display:none}
+ .about-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .container{width:calc(100% - 28px)}
+ .hero{padding:65px 0 55px;min-height:auto}
+ h1{letter-spacing:-2.5px}
+ section{padding:60px 0}
+ .projects-grid{grid-template-columns:1fr}
+ .project.wide{grid-column:auto}
+ .approach-grid{grid-template-columns:1fr}
+ .code-card{padding:18px}
+ .float-one{right:-4px}.float-two{left:-4px}
+ .contact-details{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">VISHNU<span>.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn btn-primary">Let's Connect ↗</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+<section class="hero container" id="home">
+  <div class="reveal">
+    <div class="eyebrow">Lead Software Developer · Product Builder</div>
+    <h1>I turn ideas into <span class="gradient">digital products.</span></h1>
+    <p>I'm Vishnu Sharma — a backend-focused software developer who enjoys building reliable systems, solving real business problems, and taking products from concept to implementation.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#projects">Explore My Work ↘</a>
+      <a class="btn btn-outline" href="mailto:vishnushramaksg34@gmail.com">Get In Touch ↗</a>
+    </div>
+    <div class="quick-skills">
+      <span>Laravel & PHP</span><span>Python</span><span>API Development</span><span>Product Engineering</span>
+    </div>
+  </div>
+
+  <div class="hero-art">
+    <div class="code-card">
+      <div class="code-top"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span class="filename">product_builder.py</span></div>
+      <pre><span class="code-purple">class</span> ProductBuilder:
+  <span class="code-purple">def</span> build(self, idea):
+    requirements = <span class="code-pink">understand</span>(idea)
+    system = <span class="code-pink">design</span>(requirements)
+    product = <span class="code-pink">build</span>(system)
+
+    <span class="code-purple">return</span> {
+      <span class="code-green">"quality"</span>: <span class="code-green">"maintainable"</span>,
+      <span class="code-green">"mindset"</span>: <span class="code-green">"keep improving"</span>
+    }</pre>
+      <div class="float-card float-one"><small>CORE FOCUS</small>Reliable backend systems</div>
+      <div class="float-card float-two"><small>MY APPROACH</small>Build · Learn · Improve</div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="container">
+  <div class="section-heading">
+    <small>01 / ABOUT ME</small>
+    <h2>Engineering with a product mindset.</h2>
+    <p>I combine practical backend development with an understanding of how applications support users, teams, and business workflows.</p>
+  </div>
+  <div class="about-grid">
+    <article class="panel">
+      <h3>Who I am</h3>
+      <p>My work focuses on backend development, application logic, APIs, database-driven workflows, and third-party integrations. I enjoy making complex requirements easier to implement and maintain.</p>
+      <p>I have worked with PHP and Laravel and have also built Python-based applications. I value readable code, thoughtful design decisions, collaboration, and continuous improvement.</p>
+    </article>
+    <article class="panel">
+      <h3>How I add value</h3>
+      <div class="principles">
+        <div class="principle"><b>Problem solving</b>Understand the need before coding.</div>
+        <div class="principle"><b>Clean systems</b>Keep logic clear and maintainable.</div>
+        <div class="principle"><b>Integrations</b>Connect APIs and services.</div>
+        <div class="principle"><b>Ownership</b>Build, troubleshoot, and improve.</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="skills" class="container">
+  <div class="section-heading">
+    <small>02 / TECHNICAL TOOLKIT</small>
+    <h2>The tools behind the work.</h2>
+    <p>My toolkit spans backend engineering, databases, integrations, and modern application workflows.</p>
+  </div>
+  <div class="skills-grid">
+    <article class="skill"><div class="skill-icon">⌘</div><h3>Backend Development</h3><p>PHP · Laravel · Python · REST APIs</p></article>
+    <article class="skill"><div class="skill-icon">▤</div><h3>Databases</h3><p>MySQL · PostgreSQL · MongoDB</p></article>
+    <article class="skill"><div class="skill-icon">⇄</div><h3>API Integrations</h3><p>Third-party APIs · Payments · Messaging</p></article>
+    <article class="skill"><div class="skill-icon">⬡</div><h3>Cloud & Delivery</h3><p>AWS fundamentals · Git · CI/CD</p></article>
+    <article class="skill"><div class="skill-icon">◈</div><h3>Application Security</h3><p>JWT · Authentication · Role-based access</p></article>
+    <article class="skill"><div class="skill-icon">⌕</div><h3>Performance</h3><p>Debugging · Query optimization · Code review</p></article>
+    <article class="skill"><div class="skill-icon">▧</div><h3>Frontend Collaboration</h3><p>HTML · CSS · JavaScript · Angular</p></article>
+    <article class="skill"><div class="skill-icon">✳</div><h3>Product Development</h3><p>Requirements · Workflows · Iteration</p></article>
+  </div>
+</section>
+
+<section id="projects" class="container">
+  <div class="section-heading">
+    <small>03 / SELECTED PROJECTS</small>
+    <h2>Ideas turned into experiences.</h2>
+    <p>A selection of independent product work and application projects across different domains.</p>
+  </div>
+  <div class="projects-grid">
+
+    <article class="project">
+      <div class="project-label">01 · Independent Product</div>
+      <h3>Veyra ✦</h3>
+      <p>A companion-booking marketplace concept centered on discovering experiences and connecting people. Product scope includes experience discovery, booking journeys, platform credits, and companion onboarding.</p>
+      <div class="tags"><span>Marketplace</span><span>Booking Workflows</span><span>Product Engineering</span></div>
+      <a class="project-link" href="https://veyra.wecareconnect.in" target="_blank" rel="noopener noreferrer">Explore Veyra ↗</a>
+    </article>
+
+    <article class="project">
+      <div class="project-label">02 · Independent Product</div>
+      <h3>PlayEarnZone ◉</h3>
+      <p>A gaming-oriented web platform project, focused on developing a digital product experience and its user journeys.</p>
+      <div class="tags"><span>Web Platform</span><span>Product Development</span><span>User Experience</span></div>
+      <a class="project-link" href="https://playearnzone.com" target="_blank" rel="noopener noreferrer">Explore PlayEarnZone ↗</a>
+    </article>
+
+    <article class="project">
+      <div class="project-label">03 · Business Application</div>
+      <h3>Procurement & Inventory</h3>
+      <p>A procurement and inventory management platform for construction workflows. It covers material indents, purchase approvals, goods receipt, stock tracking, and invoice workflows across roles.</p>
+      <div class="tags"><span>Business Workflows</span><span>Inventory</span><span>Approvals</span><span>Role-based Access</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-label">04 · Full-Stack Application</div>
+      <h3>Patient Management System</h3>
+      <p>A patient management application built with Angular, Python/Pyramid, and PostgreSQL. Features include JWT authentication, Admin/Doctor/Staff role-based access, database migrations, and Excel export.</p>
+      <div class="tags"><span>Angular</span><span>Python / Pyramid</span><span>PostgreSQL</span><span>JWT</span></div>
+    </article>
+
+    <article class="project wide">
+      <div class="project-label">05 · Backend Engineering</div>
+      <h3>Backend Systems & API Development</h3>
+      <p>Professional backend work across business applications using PHP and Laravel, database-backed workflows, API integrations, validation rules, and production issue investigation. Focused on maintainability, predictable behavior, and collaborative delivery.</p>
+      <div class="tags"><span>PHP</span><span>Laravel</span><span>REST APIs</span><span>SQL</span><span>Integrations</span></div>
+    </article>
+
+  </div>
+</section>
+
+<section id="approach" class="container">
+  <div class="section-heading">
+    <small>04 / MY APPROACH</small>
+    <h2>Thoughtful work. Clear outcomes.</h2>
+  </div>
+  <div class="approach-grid">
+    <article class="step"><small>STEP_01</small><h3>Understand</h3><p>Clarify requirements, user needs, edge cases, and business rules before choosing an implementation.</p></article>
+    <article class="step"><small>STEP_02</small><h3>Build</h3><p>Develop clear, maintainable application logic with appropriate data structures and integrations.</p></article>
+    <article class="step"><small>STEP_03</small><h3>Improve</h3><p>Validate important paths, investigate issues, use feedback, and refine the solution over time.</p></article>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <div class="contact-panel">
+    <div class="eyebrow">05 / LET'S CONNECT</div>
+    <h2>Have an idea worth building?</h2>
+    <p>I'm open to meaningful collaborations, backend engineering opportunities, and conversations with people building useful digital products.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="mailto:vishnushramaksg34@gmail.com?subject=Let's%20Connect">Email Me ↗</a>
+      <a class="btn btn-outline" href="https://veyra.wecareconnect.in" target="_blank" rel="noopener noreferrer">See My Product ↗</a>
+    </div>
+    <div class="contact-details">
+      <a href="mailto:vishnushramaksg34@gmail.com">✉ vishnushramaksg34@gmail.com</a>
+      <a href="tel:+918690482938">☎ +91 86904 82938</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Vishnu Sharma. Built with care.</span>
+    <a href="#home">Back to top ↑</a>
+  </div>
+</footer>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
